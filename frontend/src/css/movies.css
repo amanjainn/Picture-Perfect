@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+   
+}
+
+.movies-layout{
+ background-color: black; 
+     color:white;
+}
+
+.navbar-m{
+    display: flex;
+    justify-content:space-around;
+   
+}
+.navbar-c{
+    display: flex;
+  
+}
+
+ul li{
+    display: inline-block;
+     margin :25px;
+     font-size:22px;
+}
+
+.input-group input{
+    width : 240px !important;
+    height: 35px !important;
+    margin : 25px;
+}
+
+img{
+    display: inline !important;
+    margin: 25px -2px;
+}
+
+.login-btn{
+    font-size:22px;
+    margin:25px 70px;
+}
+
+.btn-search{
+    background-color:white;
+    color:black;
+    margin: 25px -15px;
+}
+
