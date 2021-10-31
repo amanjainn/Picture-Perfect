@@ -7,12 +7,11 @@ import { Reviews } from '../../data/review'
 import Review from '../Movies/review'
 
 
-const Movie = () => {
+const Movie = ({ userSigned, adminSigned }) => {
     const { id } = useParams();
-    const [login, setLogin] = useState(true);
     return (
         <div>
-            <Navbar active="movie" />
+            <Navbar active="movie" userSigned={userSigned} adminSigned={adminSigned} />
 
             <div className="container">
                 {
@@ -32,8 +31,8 @@ const Movie = () => {
                                     <h3>{movie.movieDesc}</h3>
                                     <br />
                                     <h4>Released on {movie.releaseDate}</h4>
-                                    <Link to={`/movies/${id}/editMovie`}>  <button className="btn btn-success" style={{ marginRight: "30px" }}>Edit Movie</button></Link>
-                                    <Link to={`/movies/${id}/deleteMovie`}>  <button className="btn btn-danger">Delete Movie</button></Link>
+                                    {adminSigned && <Link to={`/movies/${id}/editMovie`}>  <button className="btn btn-success" style={{ marginRight: "30px" }}>Edit Movie</button></Link>}
+                                    {adminSigned && <Link to={`/movies/${id}/deleteMovie`}>  <button className="btn btn-danger">Delete Movie</button></Link>}
                                 </div>
                             </div>
                         )
@@ -43,7 +42,7 @@ const Movie = () => {
             <div className="container">
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <div><h1 style={{ fontSize: "45px" }}> <span style={{ color: "#F5C518", padding: "5px" }}> |  </span> User Reviews </h1></div>
-                    {login ? <Link to={`/movies/${id}/addReview`}> <div><button className="btn btn-primary" style={{ padding: "10px 5px" }} >Add Review</button> </div> </Link> : <Link to="/login"><div><button className="btn btn-primary" style={{ padding: "10px 5px" }} >Signin to add review</button> </div></Link>}
+                    {(userSigned || adminSigned) ? <Link to={`/movies/${id}/addReview`}> <div><button className="btn btn-primary" style={{ padding: "10px 5px" }} >Add Review</button> </div> </Link> : <Link to="/login"><div><button className="btn btn-primary" style={{ padding: "10px 5px" }} >Signin to add review</button> </div></Link>}
 
                 </div>
                 {

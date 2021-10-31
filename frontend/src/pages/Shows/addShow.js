@@ -1,17 +1,13 @@
 import React from 'react'
 import Navbar from '../layouts/navbar'
-import { Link, useParams } from 'react-router-dom'
 
 
-const EditShow = () => {
-
-    const { id } = useParams();
+const AddShow = () => {
     return (
         <>
-            <Navbar active="movie" login={true} />
+            <Navbar active="show" userSigned={true} adminSigned={true} />
             <div className="container">
-                <h1>Edit a Show </h1>
-
+                <h1>Add a Show </h1>
                 <form>
                     <div className="form-group">
                         <label htmlFor="rating">Show Name</label>
@@ -41,13 +37,12 @@ const EditShow = () => {
                         <label htmlFor="rating">Show Thumbnail</label>
                         <input type="text" className="form-control" placeholder="Enter the url of show's thumbnail" />
                     </div>
-                    <button type="text" className=" btn btn-primary btn-lg" > Update  </button>
+                    <button type="text" className=" btn btn-primary btn-lg" > Submit  </button>
                 </form>
-
 
             </div>
         </>
     )
 }
 
-export default EditShow
+export default AddShow;

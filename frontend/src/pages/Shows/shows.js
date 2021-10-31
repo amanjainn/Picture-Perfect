@@ -4,10 +4,10 @@ import '../../css/movies.css'
 import Navbar from '../layouts/navbar'
 import { useState } from 'react'
 import { ShowData } from '../../data/shows'
-import Show from '../Shows/show'
+import Show from './show'
 
 
-const Shows = () => {
+const Shows = ({ userSigned, adminSigned }) => {
     const [show, setShow] = useState(false)
     const [city, setCity] = useState('')
     const [showName, setShowName] = useState('')
@@ -23,7 +23,7 @@ const Shows = () => {
 
     return (
         <div>
-            <Navbar active="show" login={true} />
+            <Navbar active="show" userSigned={userSigned} adminSigned={adminSigned} />
             <div className="container">
                 <h1>Search shows </h1>
                 <form onSubmit={handleSubmit}>

@@ -5,12 +5,12 @@ import { ShowData } from '../../data/shows'
 
 
 
-const Show = () => {
+const Show = ({ userSigned, adminSigned }) => {
 
     const { id } = useParams();
     return (
         <div>
-            <Navbar active="show" />
+            <Navbar active="show" userSigned={userSigned} adminSigned={adminSigned} />
             {ShowData.filter((item) => {
                 return item.showId === parseInt(id)
             }).map(show => {
@@ -29,8 +29,8 @@ const Show = () => {
                                     <h3>Date : {show.Date}</h3>
                                     <h3>Timings : {show.time}</h3>
                                     <br />
-                                    <Link to={`/shows/${id}/editShow`}>   <button className="btn btn-success" style={{ marginRight: "30px" }}>Edit Show</button></Link>
-                                    <Link to={`/shows/${id}/deleteShow`}><button className="btn btn-danger">Delete Show</button> </Link>
+                                    {adminSigned && <Link to={`/shows/${id}/editShow`}>   <button className="btn btn-success" style={{ marginRight: "30px" }}>Edit Show</button></Link>}
+                                    {adminSigned && <Link to={`/shows/${id}/deleteShow`}><button className="btn btn-danger">Delete Show</button> </Link>}
                                 </div>
                             </div>
 

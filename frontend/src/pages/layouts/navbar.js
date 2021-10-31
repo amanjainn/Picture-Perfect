@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-const Navbar = ({ active, login }) => {
+const Navbar = ({ active, userSigned, adminSigned }) => {
     let colorM = "white"
     let colorS = "white"
     if (active === "movie") colorM = "red"
@@ -20,12 +20,12 @@ const Navbar = ({ active, login }) => {
 
                         </ul>
                         <div class="input-group">
-                            {(login && active === "Movie") && <Link to="/movies/addMovie" ><button type="text" className="btn btn-primary btn-lg " style={{ marginTop: "22px" }}> Add a Movie </button> </Link>}
-                            {(login && active === "show") && <Link to="/shows/addShow" ><button type="text" className="btn btn-primary btn-lg " style={{ marginTop: "22px" }}> Add a Show </button> </Link>}
+                            {(adminSigned && active === "Movie") && <Link to="/movies/addMovie" ><button type="text" className="btn btn-primary btn-lg " style={{ marginTop: "22px" }}> Add a Movie </button> </Link>}
+                            {(adminSigned && active === "show") && <Link to="/shows/addShow" ><button type="text" className="btn btn-primary btn-lg " style={{ marginTop: "22px" }}> Add a Show </button> </Link>}
                         </div>
 
-                        {!login && <span className="login-btn"> <Link to="/login" style={{ color: "white", textDecoration: "none" }}> <h4> Login </h4> </Link> </span>}
-                        {login && <span className="login-btn"> <Link to="/" style={{ color: "white", textDecoration: "none" }}> <h4> Logout </h4> </Link> </span>}
+                        {!(adminSigned || userSigned) && <span className="login-btn"> <Link to="/login" style={{ color: "white", textDecoration: "none" }}> <h4> Login </h4> </Link> </span>}
+                        {(adminSigned || userSigned) && <span className="login-btn"> <Link to="/" style={{ color: "white", textDecoration: "none" }}> <h4> Logout </h4> </Link> </span>}
 
                     </div>
                 </div>

@@ -8,7 +8,7 @@ const DeleteMovies = () => {
     const { id } = useParams();
     return (
         <>
-            <Navbar active="movie" login={true} />
+            <Navbar active="movie" userSigned={true} adminSigned={true} />
             <div className="container">
                 <h1> Are you sure you want to delete this movie?</h1>
                 <button className="btn btn-danger btn-lg" style={{ marginRight: "30px" }}>Yes</button>

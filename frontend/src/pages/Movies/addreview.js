@@ -6,7 +6,7 @@ const Addreview = () => {
     return (
         <>
 
-            <Navbar active="movie" />
+            <Navbar active="movie" userSigned={true} adminSigned={true} />
             <div className="container">
                 <h1>Add a review </h1>
                 <form>

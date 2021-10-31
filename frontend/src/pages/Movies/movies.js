@@ -5,9 +5,8 @@ import '../../css/movies.css'
 import { useState } from 'react'
 
 
-const Movies = () => {
+const Movies = ({ userSigned, adminSigned }) => {
     const [item, setItem] = useState('');
-    const [login, setLogin] = useState(true);
     return (
         <>
             <div className="movies-layout">
@@ -23,11 +22,11 @@ const Movies = () => {
                             </ul>
                             <div class="input-group">
                                 <input type="search" class="form-control " placeholder="Search" value={item} onChange={(e) => setItem(e.target.value)} />
-                                {login && <Link to="/movies/addMovie" ><button type="text" className="btn btn-primary btn-lg " style={{ marginTop: "22px" }}> Add a Movie </button> </Link>}
+                                {adminSigned && <Link to="/movies/addMovie" ><button type="text" className="btn btn-primary btn-lg " style={{ marginTop: "22px" }}> Add a Movie </button> </Link>}
                             </div>
 
-                            {!login && <span className="login-btn"> <Link to="/login" style={{ color: "white", textDecoration: "none" }}> <h4> Login </h4> </Link> </span>}
-                            {login && <span className="login-btn"> <Link to="/" style={{ color: "white", textDecoration: "none" }}> <h4> Logout </h4> </Link> </span>}
+                            {!(adminSigned || userSigned) && <span className="login-btn"> <Link to="/login" style={{ color: "white", textDecoration: "none" }}> <h4> Login </h4> </Link> </span>}
+                            {(adminSigned || userSigned) && <span className="login-btn"> <Link to="/" style={{ color: "white", textDecoration: "none" }}> <h4> Logout </h4> </Link> </span>}
 
 
 

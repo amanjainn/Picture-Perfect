@@ -8,7 +8,7 @@ const DeleteShow = () => {
     const { id } = useParams();
     return (
         <>
-            <Navbar active="show" login={true} />
+            <Navbar active="show" userSigned={true} adminSigned={true} />
             <div className="container">
                 <h1> Are you sure you want to delete this show ?</h1>
                 <button className="btn btn-danger btn-lg" style={{ marginRight: "30px" }}>Yes</button>

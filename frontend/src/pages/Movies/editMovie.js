@@ -1,13 +1,16 @@
 import React from 'react'
 import Navbar from '../layouts/navbar'
+import { Link, useParams } from 'react-router-dom'
 
 
-const AddMovie = () => {
+const EditMovies = () => {
+
+    const { id } = useParams();
     return (
         <>
-            <Navbar active="movie" />
+            <Navbar active="movie" userSigned={true} adminSigned={true} />
             <div className="container">
-                <h1>Add a Movie </h1>
+                <h1>Edit a Movie </h1>
                 <form>
                     <div className="form-group">
                         <label htmlFor="rating">Movie Name</label>
@@ -33,13 +36,11 @@ const AddMovie = () => {
                         <label htmlFor="rating">Movie Thumbnail</label>
                         <input type="text" className="form-control" placeholder="Enter the url of movie's thumbnail" />
                     </div>
-                    <button type="text" className=" btn btn-primary btn-lg" > Submit  </button>
+                    <button type="text" className=" btn btn-primary btn-lg" > Edit  </button>
                 </form>
-
             </div>
         </>
     )
-
 }
 
-export default AddMovie
+export default EditMovies
