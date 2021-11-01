@@ -7,7 +7,7 @@ import { ShowData } from '../../data/shows'
 import Show from './show'
 
 
-const Shows = ({ userSigned, adminSigned }) => {
+const Shows = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
     const [show, setShow] = useState(false)
     const [city, setCity] = useState('')
     const [showName, setShowName] = useState('')
@@ -23,7 +23,7 @@ const Shows = ({ userSigned, adminSigned }) => {
 
     return (
         <div>
-            <Navbar active="show" userSigned={userSigned} adminSigned={adminSigned} />
+            <Navbar active="show" userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
             <div className="container">
                 <h1>Search shows </h1>
                 <form onSubmit={handleSubmit}>

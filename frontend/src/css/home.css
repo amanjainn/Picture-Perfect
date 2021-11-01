@@ -34,8 +34,7 @@ button {
 .showcase {
 	display: flex;
 	justify-content: center;
-	margin-top: 48px;
-	height: 85vh;
+	height: 100vh;
 }
 
 .showcase-item1 {

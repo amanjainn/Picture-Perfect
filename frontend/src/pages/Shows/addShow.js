@@ -2,10 +2,10 @@ import React from 'react'
 import Navbar from '../layouts/navbar'
 
 
-const AddShow = () => {
+const AddShow = ({ user, isUserSignedIn }) => {
     return (
         <>
-            <Navbar active="show" userSigned={true} adminSigned={true} />
+            <Navbar active="show" userSigned={true} adminSigned={true} user={user} isUserSignedIn={isUserSignedIn} />
             <div className="container">
                 <h1>Add a Show </h1>
                 <form>

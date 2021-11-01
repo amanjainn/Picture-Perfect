@@ -2,10 +2,11 @@ import React from 'react'
 import Navbar from '../layouts/navbar'
 
 
-const AddMovie = () => {
+const AddMovie = ({ user, isUserSignedIn }) => {
+
     return (
         <>
-            <Navbar active="movie" userSigned={true} adminSigned={true} />
+            <Navbar active="movie" userSigned={true} adminSigned={true} user={user} isUserSignedIn={isUserSignedIn} />
             <div className="container">
                 <h1>Add a Movie </h1>
                 <form>

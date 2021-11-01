@@ -3,12 +3,12 @@ import Navbar from '../layouts/navbar'
 import { Link, useParams } from 'react-router-dom'
 
 
-const EditMovies = () => {
+const EditMovies = ({ user, isUserSignedIn }) => {
 
     const { id } = useParams();
     return (
         <>
-            <Navbar active="movie" userSigned={true} adminSigned={true} />
+            <Navbar active="movie" userSigned={true} adminSigned={true} user={user} isUserSignedIn={isUserSignedIn} />
             <div className="container">
                 <h1>Edit a Movie </h1>
                 <form>

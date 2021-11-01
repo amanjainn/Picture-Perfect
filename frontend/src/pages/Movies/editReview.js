@@ -1,14 +1,15 @@
 import React from 'react'
 import Navbar from '../layouts/navbar'
+import { Link, useParams } from 'react-router-dom'
 
-
-const Addreview = ({ user, isUserSignedIn }) => {
+const EditReview = ({ user, isUserSignedIn }) => {
+    const { id } = useParams();
     return (
         <>
 
             <Navbar active="movie" userSigned={true} adminSigned={true} user={user} isUserSignedIn={isUserSignedIn} />
             <div className="container">
-                <h1>Add a review </h1>
+                <h1>Edit your review </h1>
                 <form>
                     <div className="form-group">
                         <label htmlFor="rating">Rating</label>
@@ -27,4 +28,4 @@ const Addreview = ({ user, isUserSignedIn }) => {
 
 }
 
-export default Addreview
+export default EditReview

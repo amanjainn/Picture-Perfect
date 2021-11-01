@@ -5,12 +5,12 @@ import { ShowData } from '../../data/shows'
 
 
 
-const Show = ({ userSigned, adminSigned }) => {
+const Show = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
 
     const { id } = useParams();
     return (
         <div>
-            <Navbar active="show" userSigned={userSigned} adminSigned={adminSigned} />
+            <Navbar active="show" userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
             {ShowData.filter((item) => {
                 return item.showId === parseInt(id)
             }).map(show => {

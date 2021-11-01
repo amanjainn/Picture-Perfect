@@ -7,11 +7,11 @@ import { Reviews } from '../../data/review'
 import Review from '../Movies/review'
 
 
-const Movie = ({ userSigned, adminSigned }) => {
+const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
     const { id } = useParams();
     return (
         <div>
-            <Navbar active="movie" userSigned={userSigned} adminSigned={adminSigned} />
+            <Navbar active="movie" userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
 
             <div className="container">
                 {
@@ -50,7 +50,7 @@ const Movie = ({ userSigned, adminSigned }) => {
                         return data.movieId === parseInt(id)
                     }).map(function (review) {
                         return (
-                            <Review review={review} />
+                            <Review review={review} userSigned={userSigned} adminSigned={adminSigned} />
                         )
                     })
                 }
