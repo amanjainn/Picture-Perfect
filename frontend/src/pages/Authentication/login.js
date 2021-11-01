@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import '../../css/register.css'
 import { Link, useHistory } from 'react-router-dom'
 import { Auth } from 'aws-amplify'
-
-
+import Navbar from '../layouts/navbar'
+import Cover from '../../resources/cover.png'
 const Login = ({ isUserSignedIn }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -42,33 +41,39 @@ const Login = ({ isUserSignedIn }) => {
 
 
     return (
-        <div style={{ width: '100vw', height: '100vh' }}>
-            <div className="col-lg-6 bg-primary bg-img1" style={{ height: '100vh' }}>
-                <h1> <Link to="/" style={{ color: "white", textDecoration: "none" }}>Picture Perfect  </Link></h1>
-            </div>
-            <div className="col-lg-6 " style={{ height: '100vh' }}>
-                <div className="heading" >
-                    <p style={{ fontSize: "60px" }}>SignIn</p>
-                    <p style={{ fontSize: "30px", color: "grey" }}>Are you new here? <span style={{ color: "black" }}> <Link to="/register" style={{ color: "black", textDecoration: "none" }}>Register </Link></span> </p>
+
+
+        <>
+            <Navbar />
+            <div >
+                <div className="col-lg-6 ">
+                    <img src={Cover} alt="cover" width="800px" height="500px" style={{ marginTop: "50px", marginLeft: "30px" }} />
+
                 </div>
-                <form style={{ margin: " 25px 150px" }} onSubmit={handleSubmit}>
-                    {error && <p style={{ color: "red" }}> {errorMsg} </p>}
-                    <div className="form-group">
-                        <label>Username</label>
-                        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" className="form-control" placeholder="Enter your username" />
+                <div className="col-lg-6 " >
+                    <div className="heading" >
+                        <p style={{ fontSize: "60px" }}>SignIn</p>
+                        <p style={{ fontSize: "30px", color: "grey" }}>Are you new here? <span style={{ color: "black" }}> <Link to="/register" style={{ color: "#F5C419", textDecoration: "none" }}>Register </Link></span> </p>
                     </div>
+                    <form style={{ margin: " 25px 150px" }} onSubmit={handleSubmit}>
+                        {error && <p style={{ color: "red" }}> {errorMsg} </p>}
+                        <div className="form-group">
+                            <label>Username</label>
+                            <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" className="form-control" placeholder="Enter your username" />
+                        </div>
 
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" placeholder="Enter your password" />
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" placeholder="Enter your password" />
 
-                    </div>
-                    <Link to="/forgotPassword"> <p style={{ color: "green", textDecoration: "none" }}>Forgot Password</p> </ Link>
-                    <button type="submit" className=" btn btn-primary btn-lg">Login</button>
-                </form>
-            </div>
+                        </div>
+                        <Link to="/forgotPassword"> <p style={{ color: "#F5C419", textDecoration: "none" }}>Forgot Password</p> </ Link>
+                        <button type="submit" className=" btn  btn-block" style={{ backgroundColor: "#F5C419", color: "black" }}>Login</button>
+                    </form>
+                </div>
 
-        </div >
+            </div >
+        </>
     )
 }
 

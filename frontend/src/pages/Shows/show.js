@@ -29,18 +29,18 @@ const Show = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                                     <h3>Date : {show.Date}</h3>
                                     <h3>Timings : {show.time}</h3>
                                     <br />
-                                    {adminSigned && <Link to={`/shows/${id}/editShow`}>   <button className="btn btn-success" style={{ marginRight: "30px" }}>Edit Show</button></Link>}
-                                    {adminSigned && <Link to={`/shows/${id}/deleteShow`}><button className="btn btn-danger">Delete Show</button> </Link>}
-                                </div>
+                                    {adminSigned && <Link to={`/shows/${id}/editShow`}>   <button className="btn btn-lg" style={{ marginRight: "30px", backgroundColor: "#F5C419", color: "#131312" }}>Edit Show</button></Link>}
+                                    {adminSigned && <Link to={`/shows/${id}/deleteShow`}><button className="btn btn-lg " style={{ backgroundColor: "#131312", color: "#F5C419" }} > Delete Show</button> </Link>}
                             </div>
+                        </div>  
 
-                        </div>
+                    </div>
                     </>
-                )
-            })
+    )
+})
 
             }
-        </div>
+        </div >
     )
 }
 

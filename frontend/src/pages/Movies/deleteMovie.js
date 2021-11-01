@@ -11,8 +11,8 @@ const DeleteMovies = ({ user, isUserSignedIn }) => {
             <Navbar active="movie" userSigned={true} adminSigned={true} user={user} isUserSignedIn={isUserSignedIn} />
             <div className="container">
                 <h1> Are you sure you want to delete this movie?</h1>
-                <button className="btn btn-danger btn-lg" style={{ marginRight: "30px" }}>Yes</button>
-                <Link to={`/movies/${id}`} ><button className="btn btn-primary btn-lg">No</button> </Link>
+                <button className="btn  btn-lg" style={{ marginRight: "30px", backgroundColor: "#F5C419", color: "#131312" }}>Yes</button>
+                <Link to={`/movies/${id}`} ><button className="btn btn-lg" style={{ backgroundColor: "#131312", color: "#F5C419" }} >No</button> </Link>
             </div>
         </>
     )

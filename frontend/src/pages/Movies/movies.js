@@ -1,7 +1,6 @@
 import React from 'react'
 import { Data } from '../../data/movies'
 import { Link } from 'react-router-dom'
-import '../../css/movies.css'
 import { useState } from 'react'
 import Navbar from '../layouts/navbar'
 
@@ -12,7 +11,7 @@ const Movies = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
         <>
             <Navbar active="movie" userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
             <div class="form-group" style={{ display: "flex", justifyContent: "center", marginTop: "30px" }} >
-                <input type="search" class="form-control " placeholder="Search Movies" value={item} onChange={(e) => setItem(e.target.value)} />
+                <input style={{ width: "850px", height: "60px", fontSize: "20px", marginBottom: "20px" }} className="form-control" type="search" placeholder="Search Movies" value={item} onChange={(e) => setItem(e.target.value)} />
             </div>
             <div style={{ marginLeft: "40px" }} >
                 <div>

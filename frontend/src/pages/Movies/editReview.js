@@ -19,7 +19,7 @@ const EditReview = ({ user, isUserSignedIn }) => {
                         <label htmlFor="rating">Review</label>
                         <input type="text" className="form-control" placeholder="Write few words about the movie" />
                     </div>
-                    <button type="text" className=" btn btn-primary btn-lg" > Submit  </button>
+                    <button type="text" className=" btn  btn-block " style={{ backgroundColor: "#F5C419", color: "#131312" }} > Submit  </button>
                 </form>
 
             </div>

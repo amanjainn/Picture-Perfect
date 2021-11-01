@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './css/App.css'
 import Home from './pages/Home/home'
 import Login from './pages/Authentication/login'
 import Register from './pages/Authentication/register';
@@ -83,8 +84,8 @@ const App = () => {
 
 
                     {/* Any user */}
-                    <Route path="/login"> <Login isUserSignedIn={isUserSignedIn} />  </Route>
-                    <Route path="/register"> <Register />  </Route>
+                    <Route path="/login"> <Login isUserSignedIn={isUserSignedIn} adminSigned={adminSigned} user={user} userSigned={userSigned} />  </Route>
+                    <Route path="/register"> <Register isUserSignedIn={isUserSignedIn} adminSigned={adminSigned} user={user} />  </Route>
                     <Route path="/forgotPassword"> <ForgotPassword />  </Route>
                     <Route exact path="/movies/:id" children={<Movie userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />}></Route>
                     <Route exact path="/movies"> <Movies userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} /></Route>

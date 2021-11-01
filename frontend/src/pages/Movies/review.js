@@ -8,16 +8,16 @@ const Review = (props) => {
     const { userSigned, adminSigned } = props
     const user = Users.filter((user) => user.userId === userId)
     return (
-        <div style={{ padding: " 5px 15px", margin: "20px 5px", boxShadow: "0.1px 0.1px 0.9px 0.1px #333" }}>
+        <div className="review " style={{ padding: " 5px 15px", margin: "20px 5px", border: "2px solid white", borderRadius: "10px", height: "fit-content", width: "1200px" }}>
 
-            <h4>{user[0].userName}  <strong style={{ color: "#F5C518", float: "right" }}> {rating}/10.0 </strong></h4>
+            <h4>{user[0].userName}  <strong style={{ color: "#F5C419", float: "right", backgroundColor: "white" }}> {rating}/10.0 </strong></h4>
             <p style={{ fontFamily: "arial", fontWeight: "300" }}>{review}</p>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <div> <h6 className="text-muted">{lastUpdated}</h6> </div>
+            <div style={{ display: "flex", justifyContent: "space-between", backgroundColor: "white" }}>
+                <div > <h6  >{lastUpdated}</h6> </div>
                 {(adminSigned || userSigned) &&
                     <div>
-                        <Link to={`/movies/${reviewId}/editReview`}><button className="btn btn-success " style={{ width: "50px", height: "33px", marginRight: "10px" }}>Edit</button> </Link>
-                        <Link to={`/movies/${reviewId}/deleteReview`}><button className="btn btn-danger">Delete</button> </Link>
+                        <Link to={`/movies/${reviewId}/editReview`}><button className="btn  " style={{ width: "50px", height: "33px", marginRight: "10px", backgroundColor: "#131312", color: "#F5C419" }}>Edit</button> </Link>
+                        <Link to={`/movies/${reviewId}/deleteReview`}><button className="btn " style={{ backgroundColor: "#F5C419", color: "#131312" }}>Delete</button> </Link>
                     </div>}
             </div>
         </div>

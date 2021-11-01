@@ -36,7 +36,7 @@ const EditMovies = ({ user, isUserSignedIn }) => {
                         <label htmlFor="rating">Movie Thumbnail</label>
                         <input type="text" className="form-control" placeholder="Enter the url of movie's thumbnail" />
                     </div>
-                    <button type="text" className=" btn btn-primary btn-lg" > Edit  </button>
+                    <button type="text" className=" btn  btn-block" style={{ backgroundColor: "#F5C419", color: "black", height: "40px", marginTop: "20px" }} > Edit  </button>
                 </form>
             </div>
         </>

@@ -355,7 +355,7 @@ export const Reviews = [
         userId: 5,
         movieId: 1,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor sit, amet c sit, amet consectetur a sit, amet consectetur aonsectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -363,7 +363,7 @@ export const Reviews = [
         userId: 4,
         movieId: 1,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor sit, amet consecte sit, amet consectetur a sit, amet consectetur atur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -379,7 +379,7 @@ export const Reviews = [
         userId: 4,
         movieId: 9,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -387,7 +387,7 @@ export const Reviews = [
         userId: 5,
         movieId: 4,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor sit, amet clectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi veroonsectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -466,7 +466,7 @@ export const Reviews = [
         userId: 6,
         movieId: 9,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor sit, amlectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi veroet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -474,7 +474,7 @@ export const Reviews = [
         userId: 6,
         movieId: 2,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor silectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi verot, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -482,7 +482,7 @@ export const Reviews = [
         userId: 3,
         movieId: 5,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor silectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi verot, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -490,7 +490,7 @@ export const Reviews = [
         userId: 9,
         movieId: 5,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor slectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi verolectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi verolectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi veroit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -498,7 +498,7 @@ export const Reviews = [
         userId: 5,
         movieId: 1,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -506,7 +506,7 @@ export const Reviews = [
         userId: 4,
         movieId: 1,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -514,7 +514,7 @@ export const Reviews = [
         userId: 7,
         movieId: 2,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum do",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -522,7 +522,7 @@ export const Reviews = [
         userId: 4,
         movieId: 9,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -530,7 +530,7 @@ export const Reviews = [
         userId: 5,
         movieId: 4,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor sit, amet consectetur adipisicingibero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -538,7 +538,7 @@ export const Reviews = [
         userId: 3,
         movieId: 8,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor sit, Loremro",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -546,7 +546,7 @@ export const Reviews = [
         userId: 2,
         movieId: 8,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum  dolor sit, amet consectetulectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi veror adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -554,7 +554,7 @@ export const Reviews = [
         userId: 7,
         movieId: 3,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minusLorem lectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi veroipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
     {
@@ -562,15 +562,17 @@ export const Reviews = [
         userId: 8,
         movieId: 6,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor sit, amet conseLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoctLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberoetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     }, {
         reviewId: 18,
         userId: 9,
         movieId: 6,
         rating: 8.2,
-        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
+        review: "Lorem ipsum dolor sit,   amet consecLorem ipsum dolor sit,   amet consectetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit liberotetur adipisicing elit.In dolorum mollitia doloremque nisi explicabo perspiciatis repellat est deserunt ex delectus nulla dolor temporibus modi vero iusto minus, quasi impedit libero",
         lastUpdated: "21st Oct 2022",
     },
 
 ]
+
+

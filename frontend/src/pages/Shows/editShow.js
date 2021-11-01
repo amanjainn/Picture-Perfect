@@ -41,7 +41,7 @@ const EditShow = ({ user, isUserSignedIn }) => {
                         <label htmlFor="rating">Show Thumbnail</label>
                         <input type="text" className="form-control" placeholder="Enter the url of show's thumbnail" />
                     </div>
-                    <button type="text" className=" btn btn-primary btn-lg" > Update  </button>
+                    <button type="text" className=" btn btn-block" style={{ backgroundColor: "#F5C419", color: "#131312" }} > Submit  </button>
                 </form>
 
 
