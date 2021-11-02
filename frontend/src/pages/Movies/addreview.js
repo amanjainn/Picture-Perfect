@@ -12,13 +12,13 @@ const Addreview = ({ user, isUserSignedIn }) => {
                 <form>
                     <div className="form-group">
                         <label htmlFor="rating">Rating</label>
-                        <input type="text" className="form-control" placeholder="Enter values between 0 to 10 inclusive" />
+                        <input type="number" className="form-control" placeholder="Enter values between 0 to 10 inclusive" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="rating">Review</label>
                         <input type="text" className="form-control" placeholder="Write few words about the movie" />
                     </div>
-                    <button type="text" className=" btn btn-primary btn-lg" > Submit  </button>
+                    <button type="text" className=" btn  btn-block" style={{ backgroundColor: "#F5C419", color: "#131312" }} > Submit  </button>
                 </form>
 
             </div>

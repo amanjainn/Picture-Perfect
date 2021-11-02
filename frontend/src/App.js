@@ -18,6 +18,7 @@ import ProtectedRoutes from './routes/ProtectedRoutes'
 import EditReview from './pages/Movies/editReview'
 import DeleteReview from './pages/Movies/deleteReview'
 import ForgotPassword from './pages/Authentication/forgotpassword'
+import ForgotPasswordVerification from './pages/Authentication/forgotpasswordverification'
 import { Auth } from 'aws-amplify'
 
 
@@ -82,11 +83,13 @@ const App = () => {
                     <ProtectedRoutes exact path="/shows/:id/editShow" component={EditShow} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/shows/:id/deleteShow" component={DeleteShow} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
 
+                    {/* unsigned users */}
+                    <ProtectedRoutes exact path="/login" component={Login} auth={!(adminSigned || userSigned)} user={user} isUserSignedIn={isUserSignedIn} />
+                    <ProtectedRoutes exact path="/register" component={Register} auth={!(adminSigned || userSigned)} user={user} isUserSignedIn={isUserSignedIn} />
+                    <ProtectedRoutes exact path="/forgotPassword" component={ForgotPassword} auth={!(adminSigned || userSigned)} user={user} isUserSignedIn={isUserSignedIn} />
+                    <ProtectedRoutes exact path="/forgotPasswordVerification" component={ForgotPasswordVerification} auth={!(adminSigned || userSigned)} user={user} isUserSignedIn={isUserSignedIn} />
 
                     {/* Any user */}
-                    <Route path="/login"> <Login isUserSignedIn={isUserSignedIn} adminSigned={adminSigned} user={user} userSigned={userSigned} />  </Route>
-                    <Route path="/register"> <Register isUserSignedIn={isUserSignedIn} adminSigned={adminSigned} user={user} />  </Route>
-                    <Route path="/forgotPassword"> <ForgotPassword />  </Route>
                     <Route exact path="/movies/:id" children={<Movie userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />}></Route>
                     <Route exact path="/movies"> <Movies userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} /></Route>
                     <Route exact path="/shows/:id" children={<Show userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />}></Route>
