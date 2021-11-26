@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 const Review = (props) => {
-    const { userId, rating, review, lastUpdated, reviewId } = props.review
+    const { userId, rating, review, lastUpdated, reviewId, movieId } = props.review
     const { userSigned, adminSigned } = props
     const user = Users.filter((user) => user.userId === userId)
     return (
@@ -16,8 +16,8 @@ const Review = (props) => {
                 <div > <h6  >{lastUpdated}</h6> </div>
                 {(adminSigned || userSigned) &&
                     <div>
-                        <Link to={`/movies/${reviewId}/editReview`}><button className="btn  " style={{ width: "50px", height: "33px", marginRight: "10px", backgroundColor: "#131312", color: "#F5C419" }}>Edit</button> </Link>
-                        <Link to={`/movies/${reviewId}/deleteReview`}><button className="btn " style={{ backgroundColor: "#F5C419", color: "#131312" }}>Delete</button> </Link>
+                        <Link to={`/movies/${movieId}/editReview/${reviewId}`}><button className="btn  " style={{ width: "50px", height: "33px", marginRight: "10px", backgroundColor: "#131312", color: "#F5C419" }}>Edit</button> </Link>
+                        <Link to={`/movies/${movieId}/deleteReview/${reviewId}`}><button className="btn " style={{ backgroundColor: "#F5C419", color: "#131312" }}>Delete</button> </Link>
                     </div>}
             </div>
         </div>

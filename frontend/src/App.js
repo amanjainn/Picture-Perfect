@@ -26,12 +26,13 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 
 const App = () => {
     const [userSigned, setUserSigned] = useState(false);
     const [adminSigned, setAdminSigned] = useState(false);
+
+
     const [auth, setAuth] = useState(true)
     const [user, setUser] = useState({})
 
@@ -75,8 +76,8 @@ const App = () => {
                     {/* Admin and signed users */}
                     <ProtectedRoutes exact path="/movies/addMovie" component={AddMovie} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/movies/:id/addReview" component={AddReview} auth={adminSigned || userSigned} user={user} isUserSignedIn={isUserSignedIn} />
-                    <ProtectedRoutes exact path="/movies/:id/editReview" component={EditReview} auth={adminSigned || userSigned} user={user} isUserSignedIn={isUserSignedIn} />
-                    <ProtectedRoutes exact path="/movies/:id/deleteReview" component={DeleteReview} auth={adminSigned || userSigned} user={user} isUserSignedIn={isUserSignedIn} />
+                    <ProtectedRoutes exact path="/movies/:id/editReview/:id" component={EditReview} auth={adminSigned || userSigned} user={user} isUserSignedIn={isUserSignedIn} />
+                    <ProtectedRoutes exact path="/movies/:id/deleteReview/:id" component={DeleteReview} auth={adminSigned || userSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/movies/:id/editMovie" component={EditMovie} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/movies/:id/deleteMovie" component={DeleteMovie} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/shows/addShow" component={AddShow} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
