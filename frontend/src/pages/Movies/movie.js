@@ -17,10 +17,51 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
     useEffect(() => {
         axios.get(baseURL + '/reviews', { params: { movieId: id } }).then((response) => {
             setReviews(response.data)
+            const userReviews = response.data.filter((res) => res.userName === user.username)
+            console.log(response.data)
+            const lowReviews = response.data.filter((res) => parseFloat(res.rating) <= 5)
+            const highReviews = response.data.filter((res) => parseFloat(res.rating) > 5)
+            setMyReviews(userReviews);
+            setLowRatings(lowReviews)
+            setHighRatings(highReviews)
         })
     }, [])
     const [movie, setMovie] = useState({})
     const [Reviews, setReviews] = useState([])
+    const [myReviews, setMyReviews] = useState([]);
+    const [lowRatings, setLowRatings] = useState([]);
+    const [highRatings, setHighRatings] = useState([]);
+    const [start, setStart] = useState(true);
+    const [startMyReviews, setStartMyReviews] = useState(false);
+    const [startLowReviews, setStartLowReviews] = useState(false);
+    const [startHighReviews, setStartHighReviews] = useState(false);
+
+    const showAllReviews = () => {
+        setStart(true);
+        setStartMyReviews(false);
+        setStartLowReviews(false);
+        setStartHighReviews(false);
+    }
+    const showMyReviews = () => {
+        setStartMyReviews(true);
+        setStartHighReviews(false);
+        setStartLowReviews(false);
+        setStart(false)
+    }
+    const showLowReviews = () => {
+        setStartLowReviews(true);
+        setStart(false);
+        setStartMyReviews(false);
+        setStartHighReviews(false);
+
+    }
+    const showHighReviews = () => {
+        setStartHighReviews(true);
+        setStartLowReviews(false);
+        setStart(false);
+        setStartMyReviews(false);
+    }
+
 
     return (
         <div>
@@ -47,16 +88,58 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
             <div className="container">
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "30px" }}>
                     <div><h1 style={{ fontSize: "45px" }}> | <span style={{ color: "#F5C419", padding: "5px" }}>  User Reviews </span>  </h1></div>
-                    {(userSigned || adminSigned) ? <Link to={`/movies/${id}/addReview`}> <div><button className="btn btn-block" style={{ padding: "10px 5px", backgroundColor: "#F5C419", color: "black" }} >Add Review</button> </div> </Link> : <Link to="/login"><div><button className="btn  btn-block" style={{ padding: "10px 5px", backgroundColor: "#F5C419", color: "black" }} >Signin to add review</button> </div></Link>}
+                    {(userSigned || adminSigned) ?
+                        <>
+
+                            <Link to={`/movies/${id}/addReview`}> <div><button className="btn btn-block" style={{ padding: "10px 5px", backgroundColor: "#F5C419", color: "black" }} >Add Review</button> </div> </Link>
+
+
+                        </>
+                        : <Link to="/login"><div><button className="btn  btn-block" style={{ padding: "10px 5px", backgroundColor: "#F5C419", color: "black" }} >Signin to add review</button> </div></Link>}
 
                 </div>
                 <div >
-                    {
+
+                    {Reviews.length > 0 &&
+                        <div style={{ margin: "40px 0px" }}>
+                            <button className="btn btn-lg" onClick={showAllReviews} style={{ backgroundColor: "#041434" }} >All Ratings</button>
+                            {(adminSigned || userSigned) && <button className="btn btn-lg " onClick={showMyReviews} style={{ marginLeft: "20px", backgroundColor: "   #047db1" }} >My ratings</button>}
+                            <button className="btn btn-lg " onClick={showLowReviews} style={{ marginLeft: "20px", backgroundColor: "#040b25" }} >Low ratings</button>
+                            <button className="btn btn-lg " onClick={showHighReviews} style={{ marginLeft: "20px", backgroundColor: "#002A54" }}>High ratings</button>
+                        </div>
+                    }
+
+                    {start &&
                         Reviews.map(function (review) {
                             return (
                                 <Review review={review} userSigned={userSigned} adminSigned={adminSigned} username={user.username} />
                             )
                         })
+
+                    }
+                    {startMyReviews &&
+                        myReviews.map(function (review) {
+                            return (
+                                <Review review={review} userSigned={userSigned} adminSigned={adminSigned} username={user.username} />
+                            )
+                        })
+
+                    }
+                    {startLowReviews &&
+                        lowRatings.map(function (review) {
+                            return (
+                                <Review review={review} userSigned={userSigned} adminSigned={adminSigned} username={user.username} />
+                            )
+                        })
+
+                    }
+                    {startHighReviews &&
+                        highRatings.map(function (review) {
+                            return (
+                                <Review review={review} userSigned={userSigned} adminSigned={adminSigned} username={user.username} />
+                            )
+                        })
+
                     }
                     {Reviews.length <= 0 && <h2 >There aren't any reviews for this movie yet.</h2>}
                 </div>
