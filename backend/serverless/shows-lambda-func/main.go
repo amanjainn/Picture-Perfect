@@ -236,7 +236,11 @@ func DBCreateShow (req events.APIGatewayProxyRequest) (*Show,error) {
 func sendResponse(status int, body interface{}) (*events.APIGatewayProxyResponse,error){
     stringBody,_ :=json.Marshal(body)
 	return &events.APIGatewayProxyResponse{
-	   Headers : map[string]string {"Content-Type" :"application/json"},
+	   Headers :  map[string]string {
+		   "Content-Type" :"application/json",
+		   "Access-Control-Allow-Origin" : "*",
+		   "Access-Control-Credentials" :"true",
+		},
 	   StatusCode: status ,
 	   Body : string(stringBody),
 	},nil	

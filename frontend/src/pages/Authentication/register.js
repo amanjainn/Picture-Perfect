@@ -64,9 +64,12 @@ const Register = () => {
                             <div className="heading" >
                                 <p style={{ fontSize: "60px" }}>Get's Started</p>
                                 <p style={{ fontSize: "30px", color: "grey" }}>Already  have an account? <span style={{ color: "black" }}> <Link to="/login" style={{ color: "#F5C419", textDecoration: "none" }}>Login </Link></span> </p>
+                                <p style={{ width: "fit-content", border: "1px solid white ", borderRadius: "6px", padding: "9px", color: "black", backgroundColor: "#F5C419		" }} >
+                                    Register using either"@clumio.com" or "@bmsce.ac.in" to get admin access.
+                                </p>
                             </div>
 
-                            <form style={{ margin: " 25px 150px" }} onSubmit={handleSubmit}>
+                            <form style={{ margin: " 40px 150px" }} onSubmit={handleSubmit}>
                                 {error && <p style={{ color: "red" }}> {errorMsg} </p>}
                                 <div className="form-group">
                                     <label>Username</label>

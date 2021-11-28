@@ -76,8 +76,8 @@ const App = () => {
                     {/* Admin and signed users */}
                     <ProtectedRoutes exact path="/movies/addMovie" component={AddMovie} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/movies/:id/addReview" component={AddReview} auth={adminSigned || userSigned} user={user} isUserSignedIn={isUserSignedIn} />
-                    <ProtectedRoutes exact path="/movies/:id/editReview/:id" component={EditReview} auth={adminSigned || userSigned} user={user} isUserSignedIn={isUserSignedIn} />
-                    <ProtectedRoutes exact path="/movies/:id/deleteReview/:id" component={DeleteReview} auth={adminSigned || userSigned} user={user} isUserSignedIn={isUserSignedIn} />
+                    <ProtectedRoutes exact path="/movies/:id/editReview/:id2" component={EditReview} auth={adminSigned || userSigned} user={user} isUserSignedIn={isUserSignedIn} />
+                    <ProtectedRoutes exact path="/movies/:id/deleteReview/:id2" component={DeleteReview} auth={adminSigned || userSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/movies/:id/editMovie" component={EditMovie} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/movies/:id/deleteMovie" component={DeleteMovie} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/shows/addShow" component={AddShow} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />

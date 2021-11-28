@@ -1,40 +1,72 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 import Navbar from '../layouts/navbar'
+import { useHistory } from 'react-router-dom'
 
+const baseURL = "https://q039qh40c3.execute-api.us-east-2.amazonaws.com/prod"
 
 const AddMovie = ({ user, isUserSignedIn }) => {
+    const history = useHistory();
+    const [movie, setMovie] = useState('')
+    const [movieDesc, setMovieDesc] = useState('')
+    const [language, setLanguage] = useState('')
+    const [duration, setDuration] = useState('')
+    const [releasedOn, setReleasedOn] = useState('')
+    const [thumbnail, setThumbnail] = useState('')
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post(baseURL + '/movies', {
+            movieName: movie,
+            movieDesc,
+            movieImage: thumbnail,
+            language,
+            duration,
+            releaseDate: releasedOn,
+        }).then(res => {
+            setTimeout(() => {
+                history.push('/movies')
+                window.location.reload();
+            }, 100)
+        })
 
+        setMovie('')
+        setMovieDesc('')
+        setLanguage('')
+        setDuration('')
+        setReleasedOn('')
+        setThumbnail('')
+    }
     return (
         <>
             <Navbar active="movie" userSigned={true} adminSigned={true} user={user} isUserSignedIn={isUserSignedIn} />
             <div className="container">
                 <h1>Add a Movie </h1>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="rating">Movie Name</label>
-                        <input type="text" className="form-control" placeholder="Enter movie's name" />
+                        <input required value={movie} onChange={(e) => setMovie(e.target.value)} type="text" className="form-control" placeholder="Enter movie's name" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="rating">Movie Desc</label>
-                        <input type="text" className="form-control" placeholder="Enter movie's description" />
+                        <input required value={movieDesc} onChange={(e) => setMovieDesc(e.target.value)} type="text" className="form-control" placeholder="Enter movie's description" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="rating">Language</label>
-                        <input type="text" className="form-control" placeholder="Enter movie's language" />
+                        <input required value={language} onChange={(e) => setLanguage(e.target.value)} type="text" className="form-control" placeholder="Enter movie's language" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="rating">Duration</label>
-                        <input type="text" className="form-control" placeholder="Enter movie's duration" />
+                        <input required value={duration} onChange={(e) => setDuration(e.target.value)} type="text" className="form-control" placeholder="Enter movie's duration" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="rating">Released on</label>
-                        <input type="text" className="form-control" placeholder="Movie released on" />
+                        <input required value={releasedOn} onChange={(e) => setReleasedOn(e.target.value)} type="text" className="form-control" placeholder="Movie released on" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="rating">Movie Thumbnail</label>
-                        <input type="text" className="form-control" placeholder="Enter the url of movie's thumbnail" />
+                        <input required value={thumbnail} onChange={(e) => setThumbnail(e.target.value)} type="text" className="form-control" placeholder="Enter the url of movie's thumbnail" />
                     </div>
-                    <button type="text" className=" btn  btn-block" style={{ backgroundColor: "#F5C419", color: "black", height: "40px", marginTop: "20px" }} > Submit  </button>
+                    <button type="submit" className=" btn  btn-block" style={{ backgroundColor: "#F5C419", color: "black", height: "40px", marginTop: "20px" }} > Submit  </button>
                 </form>
 
             </div>

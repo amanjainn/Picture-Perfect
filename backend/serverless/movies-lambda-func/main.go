@@ -303,14 +303,12 @@ func DBFetchReview(req events.APIGatewayProxyRequest,reviewId string) (*Review,e
 
 // Add a review 
 func DBCreateReview(req events.APIGatewayProxyRequest)(*Review,error){
-	 movieId := req.QueryStringParameters["movieId"];
 	 var u Review
 	 if err:= json.Unmarshal([]byte (req.Body),&u) ; err!=nil {
 		  return nil,errors.New(NOTABLETOUNMARSHAL)
 	 }
 	 var id = ksuid.New();
 	 u.ReviewId = id.String() ;
-	 u.MovieId = movieId
 	 data, err := dynamodbattribute.MarshalMap(u);
 	 if err!=nil{
 		 return nil,errors.New(NOTABLETOMARSHAL)
@@ -400,7 +398,11 @@ func DBFetchMovieReviews(req events.APIGatewayProxyRequest, movieId string)(*[]R
 func sendResponse(status int,body interface{}) (*events.APIGatewayProxyResponse,error){
 	stringBody,_ :=json.Marshal(body);
 	return &events.APIGatewayProxyResponse{
-		Headers : map[string]string {"Content-Type" : "application/json"},
+		Headers :  map[string]string {
+		   "Content-Type" :"application/json",
+		   "Access-Control-Allow-Origin" : "*",
+		   "Access-Control-Credentials" :"true",
+		},
 		Body : string(stringBody),
 		StatusCode: status,
 	},nil

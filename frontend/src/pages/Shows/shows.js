@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../layouts/navbar'
-import { ShowData } from '../../data/shows'
+import axios from 'axios'
+const baseURL = "https://q039qh40c3.execute-api.us-east-2.amazonaws.com/prod"
 
 
 const Shows = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
@@ -10,6 +11,7 @@ const Shows = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
     const [showName, setShowName] = useState('')
     const [cityItem, setCityItem] = useState('')
     const [showNameItem, setShowNameItem] = useState('')
+    const [ShowData, setshowData] = useState([]);
     const handleSubmit = (e) => {
         e.preventDefault();
         setShowNameItem(showName)
@@ -17,6 +19,15 @@ const Shows = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
         setShow(true)
 
     }
+    let shows = false
+    useEffect(() => {
+        axios.get(baseURL + '/shows').then((res) => {
+            setshowData(res.data)
+        })
+
+    }, [])
+
+
 
     return (
         <div>
@@ -25,7 +36,7 @@ const Shows = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                 <h1 style={{ marginBottom: "30px" }}>Search shows </h1>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group" >
-                        <input style={{ height: "50px", fontSize: "20px" }} required type="text" value={city} onChange={(e) => setCity(e.target.value)} className="form-control" name="" id="" placeholder="Enter name of city" />
+                        <input style={{ height: "50px", fontSize: "20px" }} required type="text" value={city} onChange={(e) => { setCity(e.target.value) }} className="form-control" name="" id="" placeholder="Enter name of city" />
                     </div>
                     <div className="form-group">
                         <input style={{ height: "50px", fontSize: "20px" }} type="text" name="" value={showName} onChange={(e) => setShowName(e.target.value)} className="form-control" id="" placeholder="Enter name of movie" />
@@ -39,17 +50,18 @@ const Shows = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                 {show &&
 
                     ShowData.filter((shows) => {
-                        console.log(city)
-                        return ((shows.cityName).toLowerCase().includes(cityItem.toLowerCase()) || (cityItem).toLowerCase().includes(shows.cityName)) && ((shows.showName).toLowerCase().includes(showNameItem.toLowerCase()) || (showNameItem).toLowerCase().includes(shows.showName))
+                        return (((shows.cityName).toLowerCase().includes(cityItem.toLowerCase()) || (cityItem).toLowerCase().includes(shows.cityName)) && ((shows.showName).toLowerCase().includes(showNameItem.toLowerCase()) || (showNameItem).toLowerCase().includes(shows.showName)))
                     }).map(function (showItem) {
+                        shows = true;
                         return (
 
-                            <div className="card col-sm-3" style={{ width: "18rem", height: "450px", backgroundColor: "#131312" }} >
-                                <img className="card-img-top" width="150px" height="200px" src={showItem.showImg} alt="Card cap" />
+                            <div className="card col-sm-3" style={{ width: "22rem", height: "450px", backgroundColor: "#131312" }} >
+                                <img className="card-img-top" width="200px" height="200px" src={showItem.showImg} alt="Card cap" />
                                 <div className="card-body " style={{ backgroundColor: "#131312" }}>
                                     <h4 className="card-title">{showItem.showName}</h4>
-                                    <p className="card-text">City : {showItem.cityName}</p>
-                                    <p className="card-text text-muted"> {showItem.Date}</p>
+                                    <p className="card-text">Time : {showItem.time}</p>
+                                    <p className="card-text text-muted">Location : {showItem.theatreName}</p>
+                                    <p className="card-text text-muted"> {showItem.date}</p>
                                     <Link to={`/shows/${showItem.showId}`} > <button className="btn " style={{ backgroundColor: "#F5C419", color: "black" }}>More Info</button> </Link>
                                 </div>
                             </div>
@@ -57,6 +69,7 @@ const Shows = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                         )
                     })
                 }
+                {(show && !shows) && <h2>No shows at this moment.</h2>}
 
 
 
