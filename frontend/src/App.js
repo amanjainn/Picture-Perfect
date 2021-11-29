@@ -20,8 +20,6 @@ import DeleteReview from './pages/Movies/deleteReview'
 import ForgotPassword from './pages/Authentication/forgotpassword'
 import ForgotPasswordVerification from './pages/Authentication/forgotpasswordverification'
 import { Auth } from 'aws-amplify'
-
-
 import {
     BrowserRouter as Router,
     Switch,
@@ -31,32 +29,24 @@ import {
 const App = () => {
     const [userSigned, setUserSigned] = useState(false);
     const [adminSigned, setAdminSigned] = useState(false);
-
-
     const [auth, setAuth] = useState(true)
     const [user, setUser] = useState({})
-
-
     const isUserSignedIn = (user, admin, info) => {
         setUserSigned(user)
         setAdminSigned(admin);
         setUser(info);
-        console.log(user, admin, info)
 
     }
-
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await Auth.currentSession();
-
+                await Auth.currentSession();
                 const user = await Auth.currentAuthenticatedUser();
                 const domain = (user.attributes.email).split('@')[1]  // Admins : clumio.com , bmsce.ac.in , Users : gmail.com, etc etc
 
                 if ((String(domain) === "clumio.com") || (String(domain) === "bmsce.ac.in")) {
                     isUserSignedIn(false, true, { username: user.username, email: user.attributes.email });
                 } else {
-
                     isUserSignedIn(true, false, { username: user.username, email: user.attributes.email });
                 }
             } catch (e) {
@@ -70,7 +60,6 @@ const App = () => {
     return (
         !auth &&
         <>
-
             <Router>
                 <Switch>
                     {/* Admin and signed users */}
@@ -83,13 +72,11 @@ const App = () => {
                     <ProtectedRoutes exact path="/shows/addShow" component={AddShow} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/shows/:id/editShow" component={EditShow} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/shows/:id/deleteShow" component={DeleteShow} auth={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />
-
                     {/* unsigned users */}
                     <ProtectedRoutes exact path="/login" component={Login} auth={!(adminSigned || userSigned)} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/register" component={Register} auth={!(adminSigned || userSigned)} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/forgotPassword" component={ForgotPassword} auth={!(adminSigned || userSigned)} user={user} isUserSignedIn={isUserSignedIn} />
                     <ProtectedRoutes exact path="/forgotPasswordVerification" component={ForgotPasswordVerification} auth={!(adminSigned || userSigned)} user={user} isUserSignedIn={isUserSignedIn} />
-
                     {/* Any user */}
                     <Route exact path="/movies/:id" children={<Movie userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />}></Route>
                     <Route exact path="/movies"> <Movies userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} /></Route>
@@ -100,7 +87,6 @@ const App = () => {
                 </Switch>
             </Router>
         </>
-
     )
 }
 

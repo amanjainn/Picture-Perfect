@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom'
 import Navbar from '../layouts/navbar'
 import Review from '../Movies/review'
 import axios from 'axios'
+const baseURL = process.env.REACT_APP_API
 
-const baseURL = "https://q039qh40c3.execute-api.us-east-2.amazonaws.com/prod"
 
 const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
     const { id } = useParams();

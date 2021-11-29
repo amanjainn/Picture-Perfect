@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Navbar from '../layouts/navbar'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
-const baseURL = "https://q039qh40c3.execute-api.us-east-2.amazonaws.com/prod"
+const baseURL = process.env.REACT_APP_API
+
 
 const AddShow = ({ user, isUserSignedIn }) => {
     const history = useHistory();

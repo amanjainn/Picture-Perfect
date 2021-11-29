@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../layouts/navbar'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios';
+const baseURL = process.env.REACT_APP_API
 
-
-const baseURL = "https://q039qh40c3.execute-api.us-east-2.amazonaws.com/prod"
 
 
 const EditReview = ({ user, isUserSignedIn }) => {

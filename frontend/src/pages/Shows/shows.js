@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../layouts/navbar'
 import axios from 'axios'
-const baseURL = "https://q039qh40c3.execute-api.us-east-2.amazonaws.com/prod"
+const baseURL = process.env.REACT_APP_API
+
 
 
 const Shows = ({ userSigned, adminSigned, user, isUserSignedIn }) => {

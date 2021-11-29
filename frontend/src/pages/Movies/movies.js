@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Navbar from '../layouts/navbar'
-
-
-const baseURL = "https://q039qh40c3.execute-api.us-east-2.amazonaws.com/prod/movies"
+const baseURL = process.env.REACT_APP_API
 
 
 const Movies = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
-
+    console.log(baseURL)
     useEffect(() => {
-        axios.get(baseURL).then((response) => {
+        axios.get(baseURL + '/movies').then((response) => {
 
             const hindi = response.data.filter((res) => res.language.toLowerCase().includes("hindi"))
             const english = response.data.filter((res) => res.language.toLowerCase().includes("english"))

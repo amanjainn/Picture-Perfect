@@ -7,15 +7,11 @@
 	color:white ;
 }
 
-
-
 .btns {
 	position: absolute;
 	right: 25px;
 	margin-top: -15px;
 }
-
-
 
 .btn1 {
 	position: relative;
@@ -36,8 +32,6 @@ button {
 	cursor: pointer;
 }
 
-
-
 .movies-layout{
 
      color:white;
@@ -54,7 +48,6 @@ button {
      background-color: #131312 !important;
   
 }
-
 
 .review div, .review p ,.review h4, .review h3, .review h2, .review h1 ,.review h6,.review{
     background-color:white;
@@ -100,9 +93,6 @@ img{
     padding :0px;
     margin-top:30px;
 }
-
-
-
 .flex-item{
     padding: 10px;
 }
@@ -115,14 +105,10 @@ button{
     text-transform: capitalize !important;
     padding :0px;
 }
-
-
 .heading{
     margin:0px 150px;
     margin-top: 60px !important;
 }
-
-
 input{
     width: 480px ;
     height: 40px ;
