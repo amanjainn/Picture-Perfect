@@ -3,7 +3,7 @@ import Navbar from "../layouts/navbar";
 import { Auth } from "aws-amplify";
 import { useHistory } from "react-router-dom";
 
-const ForgotPassword = ({ user, isUserSignedIn, userSigned, adminSigneds }) => {
+const ForgotPassword = ({ user, isUserSignedIn }) => {
     const [email, setEmail] = useState();
     const history = useHistory();
     const handleSubmit = async (e) => {

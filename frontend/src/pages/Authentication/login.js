@@ -3,43 +3,31 @@ import { Link, useHistory } from "react-router-dom";
 import { Auth } from "aws-amplify";
 import Navbar from "../layouts/navbar";
 import Cover from "../../resources/cover.png";
-const Login = ({ isUserSignedIn }) => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState(false);
-    const [errorMsg, setErrorMsg] = useState("");
 
+const Login = ({ isUserSignedIn }) => {
+    const [info, setInfo] = useState({ username: "", password: "" });
+    const [errorInfo, setErrorInfo] = useState({ error: false, errorMsg: "" });
     const history = useHistory();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const user = await Auth.signIn(username, password);
+            const user = await Auth.signIn(info.username, info.password);
             const domain = user.attributes.email.split("@")[1];
 
-            if (String(domain) === "clumio.com" || String(domain) === "bmsce.ac.in") {
-                isUserSignedIn(false, true, {
-                    username: user.username,
-                    email: user.attributes.email,
-                });
-            } else {
-                isUserSignedIn(true, false, {
-                    username: user.username,
-                    email: user.attributes.email,
-                });
-            }
-
+            const isAdmin = (String(domain) === "clumio.com" || String(domain) === "bmsce.ac.in");
+            isUserSignedIn(!isAdmin, isAdmin, {
+                username: user.username,
+                email: user.attributes.email,
+            });
             history.push("/");
         } catch (error) {
-            setError(true);
-            setErrorMsg(error.message);
+            setErrorInfo({ error: true, errorMsg: error.message });
             setTimeout(() => {
-                setError(false);
-                setErrorMsg("");
+                setErrorInfo({ error: false, errorMsg: "" });
             }, 2300);
         }
     };
-
     return (
         <>
             <Navbar />
@@ -69,12 +57,14 @@ const Login = ({ isUserSignedIn }) => {
                         </p>
                     </div>
                     <form style={{ margin: " 25px 150px" }} onSubmit={handleSubmit}>
-                        {error && <p style={{ color: "red" }}> {errorMsg} </p>}
+                        {errorInfo.error && (
+                            <p style={{ color: "red" }}> {errorInfo.errorMsg} </p>
+                        )}
                         <div className="form-group">
                             <label>Username</label>
                             <input
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
+                                value={info.username}
+                                onChange={(e) => setInfo({ ...info, username: e.target.value })}
                                 type="text"
                                 className="form-control"
                                 placeholder="Enter your username"
@@ -84,8 +74,8 @@ const Login = ({ isUserSignedIn }) => {
                         <div className="form-group">
                             <label>Password</label>
                             <input
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                value={info.password}
+                                onChange={(e) => setInfo({ ...info, password: e.target.value })}
                                 type="password"
                                 className="form-control"
                                 placeholder="Enter your password"

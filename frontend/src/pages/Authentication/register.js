@@ -12,7 +12,6 @@ const Register = () => {
         confirmPassword: "",
     });
     const [errorInfo, setErrorInfo] = useState({ error: false, msg: "" });
-
     const [registered, setRegistered] = useState(false);
 
     const handleSubmit = async (e) => {
