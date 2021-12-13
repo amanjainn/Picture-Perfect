@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import Navbar from '../layouts/navbar'
-import { Link, useParams, useHistory } from 'react-router-dom'
-import axios from 'axios';
-const baseURL = process.env.REACT_APP_API
-
+import React, { useState } from "react";
+import Navbar from "../layouts/navbar";
+import { Link, useParams, useHistory } from "react-router-dom";
+import axios from "axios";
+const baseURL = process.env.REACT_APP_API;
 
 const DeleteReview = ({ user, isUserSignedIn }) => {
     const [deleted, setDeleted] = useState(false);
@@ -11,30 +10,53 @@ const DeleteReview = ({ user, isUserSignedIn }) => {
     const history = useHistory();
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.delete(baseURL + '/reviews', { params: { reviewId: id2 } }).then(res => {
+        axios.delete(baseURL + "/reviews", { params: { reviewId: id2 } }).then((res) => {
             console.log(id, id2);
-            setDeleted(true)
+            setDeleted(true);
             setTimeout(() => {
-                history.push(`/movies/${id}`)
+                history.push(`/movies/${id}`);
                 window.location.reload();
-            }, 100)
-        })
-    }
+            }, 100);
+        });
+    };
     return (
         <>
-            <Navbar active="movie" userSigned={true} adminSigned={true} user={user} isUserSignedIn={isUserSignedIn} />
+            <Navbar
+                active="movie"
+                userSigned={true}
+                adminSigned={true}
+                user={user}
+                isUserSignedIn={isUserSignedIn}
+            />
             <div className="container">
-                {!deleted &&
+                {!deleted && (
                     <>
                         <h1> Are you sure you want to delete this review?</h1>
-                        <button onClick={handleSubmit} className="btn  btn-lg" style={{ marginRight: "30px", backgroundColor: "#F5C419", color: "#131312" }}>Yes</button>
-                        <Link to={`/movies/${id2}`} ><button className="btn btn-lg" style={{ backgroundColor: "#131312", color: "#F5C419" }}>No</button> </Link>
+                        <button
+                            onClick={handleSubmit}
+                            className="btn  btn-lg"
+                            style={{
+                                marginRight: "30px",
+                                backgroundColor: "#F5C419",
+                                color: "#131312",
+                            }}
+                        >
+                            Yes
+                        </button>
+                        <Link to={`/movies/${id2}`}>
+                            <button
+                                className="btn btn-lg"
+                                style={{ backgroundColor: "#131312", color: "#F5C419" }}
+                            >
+                                No
+                            </button>
+                        </Link>
                     </>
-                }
+                )}
                 {deleted && <h1>Successfully deleted</h1>}
             </div>
         </>
-    )
-}
+    );
+};
 
-export default DeleteReview
+export default DeleteReview;

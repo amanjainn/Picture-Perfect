@@ -44,13 +44,12 @@ const EditShow = ({ user, isUserSignedIn }) => {
                 date: info.date,
             },
             { params: { showId: id } }
-        )
-            .then((res) => {
-                setTimeout(() => {
-                    history.push("/shows")
-                    window.location.reload()
-                }, 100)
-            })
+        ).then((res) => {
+            setTimeout(() => {
+                history.push("/shows")
+                window.location.reload()
+            }, 100)
+        })
         setInfo({
             theatreName: "",
             theatreLocation: "",

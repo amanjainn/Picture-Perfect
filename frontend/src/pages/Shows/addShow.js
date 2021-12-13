@@ -26,13 +26,12 @@ const AddShow = ({ user, isUserSignedIn }) => {
             showImg: info.showImg,
             time: info.time,
             date: info.date,
+        }).then((res) => {
+            setTimeout(() => {
+                history.push("/shows")
+                window.location.reload()
+            }, 100)
         })
-            .then((res) => {
-                setTimeout(() => {
-                    history.push("/shows")
-                    window.location.reload()
-                }, 100)
-            })
         setInfo({
             theatreName: "",
             theatreLocation: "",
