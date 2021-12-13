@@ -23,6 +23,7 @@ const AddMovie = ({ user, isUserSignedIn }) => {
             duration,
             releaseDate: releasedOn,
         }).then(res => {
+            console.log(res);
             setTimeout(() => {
                 history.push('/movies')
                 window.location.reload();
