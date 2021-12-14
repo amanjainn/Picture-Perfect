@@ -21,7 +21,7 @@ const Home = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                             marginTop: "55px",
                         }}
                     >
-                        Your guide to movies, shows....
+                        Your aman to movies, shows....
                     </h1>
                 </div>
                 <Link to="/movies" style={{ textDecoration: "none" }}>
