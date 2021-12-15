@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Navbar from "../layouts/navbar";
 import { useParams, useHistory } from "react-router-dom";
-const baseURL = process.env.REACT_APP_API;
+const baseURL = "https://can6t7sia8.execute-api.us-east-2.amazonaws.com/dev"
 
 const AddMovie = ({ user, isUserSignedIn }) => {
     const history = useHistory();
