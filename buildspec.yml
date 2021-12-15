@@ -8,7 +8,7 @@ phases:
       - npm install 
   build : 
     commands: 
-      - echo "Building react project "
+      - echo "Building react project"
       - npm run build 
   post_build:
     commands: 
