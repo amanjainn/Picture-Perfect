@@ -1,0 +1,85 @@
+
+
+service: backend-serverless
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: go1.x
+  lambdaHashingVersion: 20201221
+  region : us-east-2
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: "arn:aws:dynamodb:*:*:*"
+
+
+
+package:
+  patterns:
+    - '!./**'
+    - ./bin/**
+
+functions:
+
+#Shows end points
+
+  shows:
+    handler: bin/shows
+    events:
+      - http:
+          path: /shows
+          method: get
+          cors: true
+      - http:
+          path: /shows 
+          method: post 
+          cors: true
+      - http:
+          path: /shows 
+          method: patch
+          cors: true 
+      - http:
+          path: /shows 
+          method: delete
+          cors: true 
+  movies:
+    handler: bin/movies
+    events:
+      - http:
+          path: /movies
+          method: get
+          cors: true
+      - http:
+          path: /movies
+          method: post
+          cors: true 
+      - http:
+          path: /movies 
+          method: patch
+          cors: true 
+      - http:
+          path: /movies 
+          method: delete
+          cors: true 
+      - http:
+          path: /reviews
+          method: get
+          cors: true
+      - http:
+          path: /reviews
+          method: post
+          cors: true 
+      - http:
+          path: /reviews 
+          method: patch
+          cors: true 
+      - http:
+          path: /reviews 
+          method: delete
+          cors: true 
+          
+ 
