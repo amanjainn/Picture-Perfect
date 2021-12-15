@@ -6,7 +6,6 @@ phases:
     commands:
       - echo "Installing dependencies"
       - cd frontend && npm install 
-      - cd frontend && npm install  react
   build : 
     commands: 
       - echo "Building react project"
