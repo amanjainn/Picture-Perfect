@@ -7,7 +7,7 @@ const baseURL = process.env.REACT_APP_API;
 const Movies = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
     console.log(baseURL);
     useEffect(() => {
-        axios.get(baseURL + "/movies").then((response) => {
+        axios.get("https://can6t7sia8.execute-api.us-east-2.amazonaws.com/dev/movies").then((response) => {
             const hindi = response.data.filter((res) =>
                 res.language.toLowerCase().includes("hindi")
             );
