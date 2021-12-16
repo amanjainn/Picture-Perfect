@@ -13,5 +13,5 @@ phases:
   post_build:
     commands: 
       - echo "Updating files in the S3 bucket"
-      - aws s3 sync build/ s3://picture-perfect-s3-bucket --delete
+      - aws s3 sync build/ s3://www.pictureperfect --delete
   
