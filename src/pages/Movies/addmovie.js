@@ -14,6 +14,7 @@ const AddMovie = ({ user, isUserSignedIn }) => {
         releasedOn: "",
         thumbnail: "",
     });
+    console.log(user);
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post(baseURL + "/movies", {

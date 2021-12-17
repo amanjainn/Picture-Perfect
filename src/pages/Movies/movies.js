@@ -35,7 +35,7 @@ const Movies = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                 isUserSignedIn={isUserSignedIn}
             />
             <div
-                class="form-group"
+                className="form-group"
                 style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}
             >
                 <input

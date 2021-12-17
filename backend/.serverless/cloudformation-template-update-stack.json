@@ -174,7 +174,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/backend-serverless/dev/1639421592068-2021-12-13T18:53:12.068Z/backend-serverless.zip"
+          "S3Key": "serverless/backend-serverless/dev/1639725273480-2021-12-17T07:14:33.480Z/backend-serverless.zip"
         },
         "Handler": "bin/shows",
         "Runtime": "go1.x",
@@ -199,7 +199,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/backend-serverless/dev/1639421592068-2021-12-13T18:53:12.068Z/backend-serverless.zip"
+          "S3Key": "serverless/backend-serverless/dev/1639725273480-2021-12-17T07:14:33.480Z/backend-serverless.zip"
         },
         "Handler": "bin/movies",
         "Runtime": "go1.x",
@@ -217,24 +217,24 @@
         "MoviesLogGroup"
       ]
     },
-    "ShowsLambdaVersionLZ7HfQXNOCHb6EbMk7PcydnRyyeRPafGhp1KBh0w": {
+    "ShowsLambdaVersioniLGrv6Kye9g5nkdkX6dBk5Oy53ktVqUkNftd6sQ7uA": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ShowsLambdaFunction"
         },
-        "CodeSha256": "tSia55RBItiE5Mx1hi2U6WvzQ2TFKMOIACqFD5g+/hs="
+        "CodeSha256": "X15B6FEHSjFhOrziGjtEDcm2jwLFx/kjqhiZj2l3x+g="
       }
     },
-    "MoviesLambdaVersionHNixiDt6zBVCzPLLshWKlap9B0wDQGSTKJX1VzWJs": {
+    "MoviesLambdaVersionPLGmsEr0QG5WQppEAzBLsL7CHIkffprEHtuwF5vXkk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "MoviesLambdaFunction"
         },
-        "CodeSha256": "tSia55RBItiE5Mx1hi2U6WvzQ2TFKMOIACqFD5g+/hs="
+        "CodeSha256": "X15B6FEHSjFhOrziGjtEDcm2jwLFx/kjqhiZj2l3x+g="
       }
     },
     "ApiGatewayRestApi": {
@@ -981,7 +981,7 @@
         "MoviesLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1639421587994": {
+    "ApiGatewayDeployment1639725271248": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1094,7 +1094,7 @@
     "ShowsLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ShowsLambdaVersionLZ7HfQXNOCHb6EbMk7PcydnRyyeRPafGhp1KBh0w"
+        "Ref": "ShowsLambdaVersioniLGrv6Kye9g5nkdkX6dBk5Oy53ktVqUkNftd6sQ7uA"
       },
       "Export": {
         "Name": "sls-backend-serverless-dev-ShowsLambdaFunctionQualifiedArn"
@@ -1103,7 +1103,7 @@
     "MoviesLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "MoviesLambdaVersionHNixiDt6zBVCzPLLshWKlap9B0wDQGSTKJX1VzWJs"
+        "Ref": "MoviesLambdaVersionPLGmsEr0QG5WQppEAzBLsL7CHIkffprEHtuwF5vXkk"
       },
       "Export": {
         "Name": "sls-backend-serverless-dev-MoviesLambdaFunctionQualifiedArn"

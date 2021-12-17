@@ -20,11 +20,16 @@ import DeleteReview from './pages/Movies/deleteReview'
 import ForgotPassword from './pages/Authentication/forgotpassword'
 import ForgotPasswordVerification from './pages/Authentication/forgotpasswordverification'
 import { Auth } from 'aws-amplify'
+
+
 import {
     BrowserRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
+
+
+
 
 const App = () => {
     const [userSigned, setUserSigned] = useState(false);

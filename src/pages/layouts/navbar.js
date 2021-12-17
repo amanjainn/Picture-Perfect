@@ -47,7 +47,7 @@ const Navbar = ({ active, userSigned, adminSigned, user, isUserSignedIn }) => {
                             </Link>
                         </ul>
                         <div
-                            class="input-group"
+                            className="input-group"
                             style={{ backgroundColor: "#131312", color: "white" }}
                         >
                             {adminSigned && active === "movie" && (
