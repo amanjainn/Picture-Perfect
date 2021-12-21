@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Navbar from "../layouts/navbar"
 import { Link, useParams } from "react-router-dom"
 import axios from "axios"
-const baseURL = "https://can6t7sia8.execute-api.us-east-2.amazonaws.com/dev"
+const baseURL = "https://j99npls842.execute-api.us-east-2.amazonaws.com/dev"
 
 const Show = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
     const { id } = useParams()
