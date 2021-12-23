@@ -13,7 +13,7 @@ const Review = (props) => {
                 border: "2px solid white",
                 borderRadius: "8px",
                 height: "fit-content",
-                width: "500px",
+                width: "max-width",
             }}
         >
             <img

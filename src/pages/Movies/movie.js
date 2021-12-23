@@ -30,7 +30,7 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
             setLowRatings(lowReviews);
             setHighRatings(highReviews);
         });
-    }, []);
+    });
     const [movie, setMovie] = useState({});
     const [Reviews, setReviews] = useState([]);
     const [myReviews, setMyReviews] = useState([]);
@@ -111,7 +111,7 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                             </span>
                         </h1>
                     </div>
-                    {userSigned || adminSigned ? (
+                    {(userSigned || adminSigned) && myReviews.length === 0 && (
                         <>
                             <Link to={`/movies/${id}/addReview`}>
                                 <div>
@@ -128,7 +128,9 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                                 </div>
                             </Link>
                         </>
-                    ) : (
+                    )}
+
+                    {(!userSigned && !adminSigned) && (
                         <Link to="/login">
                             <div>
                                 <button
