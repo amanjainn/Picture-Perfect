@@ -10,8 +10,10 @@ const DeleteReview = ({ user, isUserSignedIn }) => {
     const history = useHistory();
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.delete(baseURL + "/reviews", { params: { reviewId: id2 } }).then((res) => {
-            console.log(id, id2);
+        axios.delete(baseURL + "/reviews", { params: { reviewId: id2 } }).then((response) => {
+            if (Object.keys(response.data).length === 0 && Object.getPrototypeOf(response.data) === Object.prototype) {
+                history.push("/error")
+            }
             setDeleted(true);
             setTimeout(() => {
                 history.push(`/movies/${id}`);

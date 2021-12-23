@@ -7,7 +7,6 @@ import Loader from "react-loader-spinner"
 const baseURL = "https://j99npls842.execute-api.us-east-2.amazonaws.com/dev"
 
 const Movies = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
-    console.log(baseURL);
     useEffect(() => {
         axios.get(baseURL + "/movies").then((response) => {
             const hindi = response.data.filter((res) =>
@@ -74,7 +73,7 @@ const Movies = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                                     );
                                 }).map(function (data) {
                                     return (
-                                        <Link to={`/movies/${data.movieId}`}>
+                                        <Link to={`/movies/${data.movieId}`} key={data.movieId}>
 
                                             <img
                                                 width="210px "
@@ -102,7 +101,7 @@ const Movies = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                                     );
                                 }).map(function (data) {
                                     return (
-                                        <Link to={`/movies/${data.movieId}`}>
+                                        <Link to={`/movies/${data.movieId}`} key={data.movieId}>
 
                                             <img
                                                 width="210px "

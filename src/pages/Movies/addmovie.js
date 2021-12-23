@@ -14,7 +14,6 @@ const AddMovie = ({ user, isUserSignedIn }) => {
         releasedOn: "",
         thumbnail: "",
     });
-    console.log(user);
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post(baseURL + "/movies", {
@@ -25,7 +24,6 @@ const AddMovie = ({ user, isUserSignedIn }) => {
             duration: data.duration,
             releaseDate: data.releasedOn,
         }).then((res) => {
-            console.log(res);
             setTimeout(() => {
                 history.push("/movies");
                 window.location.reload();

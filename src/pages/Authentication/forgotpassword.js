@@ -12,7 +12,7 @@ const ForgotPassword = ({ user, isUserSignedIn }) => {
             await Auth.forgotPassword(email);
             history.push("/forgotpasswordverification");
         } catch (error) {
-            console.log(error);
+            throw error;
         }
     };
     return (

@@ -19,6 +19,9 @@ const EditShow = ({ user, isUserSignedIn }) => {
 
     useEffect(() => {
         axios.get(baseURL + "/shows", { params: { showId: id } }).then((res) => {
+            if (Object.keys(res.data).length === 0 && Object.getPrototypeOf(res.data) === Object.prototype) {
+                history.push("/error")
+            }
             setInfo({
                 theatreName: res.data.theatreName,
                 theatreLocation: res.data.theatreLocation,

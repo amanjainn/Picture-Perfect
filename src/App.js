@@ -20,6 +20,7 @@ import DeleteReview from './pages/Movies/deleteReview'
 import ForgotPassword from './pages/Authentication/forgotpassword'
 import ForgotPasswordVerification from './pages/Authentication/forgotpasswordverification'
 import { Auth } from 'aws-amplify'
+import PageNotFound from './pages/layouts/pageNotFound'
 
 
 import {
@@ -55,7 +56,7 @@ const App = () => {
                     isUserSignedIn(true, false, { username: user.username, email: user.attributes.email });
                 }
             } catch (e) {
-                console.error(e);
+                throw e;
             }
         };
         fetchData();
@@ -88,7 +89,7 @@ const App = () => {
                     <Route exact path="/shows/:id" children={<Show userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />}></Route>
                     <Route exact path="/shows"> <Shows userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} /></Route>
                     <Route exact path="/">   <Home userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} /> </Route>
-
+                    <Route > <PageNotFound userSigned={userSigned} adminSigned={adminSigned} user={user} isUserSignedIn={isUserSignedIn} />  </Route>
                 </Switch>
             </Router>
         </>

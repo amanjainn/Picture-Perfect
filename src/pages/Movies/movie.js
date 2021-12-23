@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import Navbar from "../layouts/navbar";
 import Review from "../Movies/review";
 import axios from "axios";
@@ -8,12 +8,22 @@ const baseURL = "https://j99npls842.execute-api.us-east-2.amazonaws.com/dev"
 
 const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
     const { id } = useParams();
+    const history = useHistory();
+    const [movie, setMovie] = useState({});
+    const [Reviews, setReviews] = useState([]);
+    const [myReviews, setMyReviews] = useState([]);
+    const [lowRatings, setLowRatings] = useState([]);
+    const [highRatings, setHighRatings] = useState([]);
+    const [loader, setLoader] = useState(true);
+    const [status, setStatus] = useState({ showAllReviews: true, showMyReviews: false, showLowReviews: false, showHighReviews: false })
     useEffect(() => {
         axios.get(baseURL + "/movies", { params: { movieId: id } }).then((response) => {
             setMovie(response.data);
+            if (Object.keys(response.data).length === 0 && Object.getPrototypeOf(response.data) === Object.prototype) {
+                history.push("/error")
+            }
             setLoader(false);
-
-        });
+        })
     }, []);
 
     useEffect(() => {
@@ -22,10 +32,10 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
             const userReviews = response.data.filter(
                 (res) => res.userName === user.username
             );
-            console.log(response.data);
             const lowReviews = response.data.filter(
                 (res) => parseFloat(res.rating) <= 5
             );
+
             const highReviews = response.data.filter(
                 (res) => parseFloat(res.rating) > 5
             );
@@ -33,15 +43,7 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
             setLowRatings(lowReviews);
             setHighRatings(highReviews);
         });
-    });
-    const [movie, setMovie] = useState({});
-    const [Reviews, setReviews] = useState([]);
-    const [myReviews, setMyReviews] = useState([]);
-    const [lowRatings, setLowRatings] = useState([]);
-    const [highRatings, setHighRatings] = useState([]);
-    const [loader, setLoader] = useState(true);
-    const [status, setStatus] = useState({ showAllReviews: true, showMyReviews: false, showLowReviews: false, showHighReviews: false })
-
+    }, []);
 
     return (
         <div>
@@ -128,6 +130,7 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                                 <Link to={`/movies/${id}/addReview`}>
                                     <div>
                                         <button
+
                                             className="btn btn-block"
                                             style={{
                                                 padding: "10px 5px",
@@ -199,7 +202,7 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                         {status.showAllReviews &&
                             Reviews.map(function (review) {
                                 return (
-                                    <Review
+                                    <Review key={review.reviewId}
                                         review={review}
                                         userSigned={userSigned}
                                         adminSigned={adminSigned}
@@ -210,7 +213,7 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                         {status.showMyReviews &&
                             myReviews.map(function (review) {
                                 return (
-                                    <Review
+                                    <Review key={review.reviewId}
                                         review={review}
                                         userSigned={userSigned}
                                         adminSigned={adminSigned}
@@ -222,6 +225,8 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                             lowRatings.map(function (review) {
                                 return (
                                     <Review
+
+                                        key={review.reviewId}
                                         review={review}
                                         userSigned={userSigned}
                                         adminSigned={adminSigned}
@@ -233,6 +238,7 @@ const Movie = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                             highRatings.map(function (review) {
                                 return (
                                     <Review
+                                        key={review.reviewId}
                                         review={review}
                                         userSigned={userSigned}
                                         adminSigned={adminSigned}

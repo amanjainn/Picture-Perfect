@@ -17,9 +17,12 @@ const EditReview = ({ user, isUserSignedIn }) => {
         return dateTime;
     };
     useEffect(() => {
-        axios.get(baseURL + "/reviews", { params: { reviewId: id2 } }).then((res) => {
-            setRating(res.data.rating);
-            setReview(res.data.review);
+        axios.get(baseURL + "/reviews", { params: { reviewId: id2 } }).then((response) => {
+            if (Object.keys(response.data).length === 0 && Object.getPrototypeOf(response.data) === Object.prototype) {
+                history.push("/error")
+            }
+            setRating(response.data.rating);
+            setReview(response.data.review);
         });
     }, []);
 

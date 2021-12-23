@@ -15,7 +15,7 @@ const Navbar = ({ active, userSigned, adminSigned, user, isUserSignedIn }) => {
             await Auth.signOut();
             isUserSignedIn(false, false, {});
         } catch (error) {
-            console.log("error signing out: ", error);
+            throw error;
         }
     }
 

@@ -17,6 +17,9 @@ const AddMovie = ({ user, isUserSignedIn }) => {
     });
     useEffect(() => {
         axios.get(baseURL + "/movies", { params: { movieId: id } }).then((response) => {
+            if (Object.keys(response.data).length === 0 && Object.getPrototypeOf(response.data) === Object.prototype) {
+                history.push("/error")
+            }
             setData({
                 movie: response.data.movieName,
                 movieDesc: response.data.movieDesc,

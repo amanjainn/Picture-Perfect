@@ -10,7 +10,10 @@ const DeleteMovies = ({ user, isUserSignedIn }) => {
     const [deleted, setDeleted] = useState(false);
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.delete(baseURL + "/movies", { params: { movieId: id } }).then((res) => {
+        axios.delete(baseURL + "/movies", { params: { movieId: id } }).then((response) => {
+            if (Object.keys(response.data).length === 0 && Object.getPrototypeOf(response.data) === Object.prototype) {
+                history.push("/error")
+            }
             setDeleted(true);
             setTimeout(() => {
                 history.push("/movies");

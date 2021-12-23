@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Navbar from "../layouts/navbar"
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams,useHistory } from "react-router-dom"
 import axios from "axios"
 import Loader from "react-loader-spinner"
 const baseURL = "https://j99npls842.execute-api.us-east-2.amazonaws.com/dev"
@@ -8,10 +8,14 @@ const baseURL = "https://j99npls842.execute-api.us-east-2.amazonaws.com/dev"
 
 const Show = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
     const { id } = useParams()
+    const history = useHistory();
     const [show, setShowData] = useState({})
     const [loader, setLoader] = useState(true);
     useEffect(() => {
         axios.get(baseURL + "/shows", { params: { showId: id } }).then((response) => {
+            if (Object.keys(response.data).length === 0 && Object.getPrototypeOf(response.data) === Object.prototype) {
+                history.push("/error")
+            }
             setShowData(response.data)
             setLoader(false);
         })

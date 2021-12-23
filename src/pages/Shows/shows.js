@@ -94,7 +94,9 @@ const Shows = ({ userSigned, adminSigned, user, isUserSignedIn }) => {
                     }).map(function (showItem) {
                         shows = true
                         return (
+
                             <div
+                                key={showItem.showId}
                                 className="card col-sm-3"
                                 style={{
                                     width: "22rem",

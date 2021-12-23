@@ -14,7 +14,7 @@ const ForgotPasswordVerification = ({
             await Auth.forgotPasswordSubmit(info.email, info.code, info.password);
             setSuccess(true);
         } catch (error) {
-            console.log(error);
+            throw error
         }
     };
     return (
